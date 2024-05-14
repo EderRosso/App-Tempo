@@ -1,0 +1,22 @@
+main{
+    margin-top: 8px;
+    text-align: center;
+
+}
+
+#icon-clear{
+    width: 225px;
+    height: auto;
+}
+
+#temperatura{
+    font-size: 100px;
+    line-height:  0.8;
+    margin-top: 8px;
+}
+
+#local{
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 600;
+}

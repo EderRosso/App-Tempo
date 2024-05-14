@@ -1,0 +1,48 @@
+form{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+form i, form button{
+    font-size: 22px;
+}
+
+form div {
+    flex: 1;
+    /* background-color: pink; */
+
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+form div input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+form div input ::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+form button{
+    width: 45px;
+    height: 45px;
+
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

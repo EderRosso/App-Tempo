@@ -1,0 +1,64 @@
+@import url('./form.css');
+@import url('./footer.css');
+@import url('./main.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border: rgba(255, 255, 255, 0.5);
+}
+
+body,
+button,
+a,
+input {
+    color: rgb(253, 253, 253);
+    font: 400 1rem "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+
+    display: flex;
+    background-color: #333;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card {
+    width: 500px;
+    height: auto;
+
+    margin: auto;
+    padding: 32px 32px 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+
+}
+
+
+#unidade,
+#speed-wind,
+#temperatura {
+    font-weight: 600;
+    font-family: 'Bebas Neue', sans-serif;
+}

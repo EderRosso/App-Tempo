@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/350a2e9bec.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <title>App Tempo</title>
 </head>
+
 <body>
-    <h1>App Tempo</h1>
+    <span class="background"></span>
+
+    <div class="card">
+        <form action="">
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" name="local" placeholder="Digite a localização">
+            </div>
+
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+
+        <main>
+            <img id="icon-clear" src="img/icons/clear.png" alt="">
+            <h1 id="temperatura">25 °C</h1>
+            <h2 id="local">Sapucaia do Sul</h2>
+        </main>
+
+        <footer>
+            <div class="block">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <strong id="umidade">78%</strong>
+                    <p>Umidade</p>
+                </div>
+            </div>
+
+            <div class="block">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                    <strong id="speed-wind">8 km/h</strong>
+                    <p>Vel. do vento</p>
+                </div>
+            </div>
+           
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
