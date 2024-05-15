@@ -14,13 +14,19 @@ function getData(local) {
     return fetch(route).then(response => response.json());
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
-
+function loadInformation(){
     const value = document.querySelector('[name="local"]').value;
 
     getData(value).then(data => {
-        console.log(data);
+        
+        // console.log(data);
+        
+        if(data.cod === '404'){
+            elCard.classList.remove('active');
+            return
+        }
+        
+        elCard.classList.add('active');
 
         elTemperatura.innerHTML = Math.floor(data.main.temp) + '°C';
         elLocal.innerHTML = data.name;
@@ -32,23 +38,42 @@ function handleSubmit(event) {
 
         elIconClear.setAttribute('src', src);
 
-
-
+        fadein();
+        
 
     })
 }
 
-function fadeOut(){
-    const timeline = gsap.timeline();
+function handleSubmit(event) {
+    event.preventDefault();
 
-    timeline.to('footer', { y: 51, duration: 1, opacity: 0.5})
+    fadeOut();
+
+
 }
+
 function fadein(){
-    const timeline = gsap.timeline();
+    const timeline = gsap.timeline( );
+    const configFrom = { y: -50};
+    const configTo = { y: 0, duration:0.4, opacity:1,  ease: 'back'};
 
-    timeline.fromTo('footer', { y: -50, duration: 1, opacity: 0.5})
+
+    timeline.fromTo('#icon-clear', configFrom, configTo);
+    timeline.fromTo('#temperatura', configFrom, configTo, 0.1);
+    timeline.fromTo('#local', configFrom, configTo, 0.2);
+    timeline.fromTo('footer', configFrom, configTo, 0.3);
 }
 
-fadeOut();
+function fadeOut(){
+    const timeline = gsap.timeline({onComplete: loadInformation});
+    const config =  { y: 50, duration: 0.4, opacity: 0, ease: 'slow'};
+
+    timeline.to('footer', config);
+    timeline.to('#local', config, 0.1);
+    timeline.to('#temperatura', config, 0.2);
+    timeline.to('#icon-clear', config, 0.3);
+}
+
+
 
 document.querySelector('form').addEventListener('submit', handleSubmit);
